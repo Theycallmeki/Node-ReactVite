@@ -13,7 +13,9 @@ export default function Read() {
       <h2>User List</h2>
       <ul>
         {users.map((u) => (
-          <li key={u.id}>{u.name} ({u.email})</li>
+          <li key={u.id}>
+            <strong>ID:</strong> {u.id} — <strong>Name:</strong> {u.name} — <strong>Email:</strong> {u.email}
+          </li>
         ))}
       </ul>
     </div>
