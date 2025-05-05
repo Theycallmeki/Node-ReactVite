@@ -1,12 +1,23 @@
 const express = require('express');
 const cors = require('cors');
 const db = require('./db');
+const path = require('path');
 
 const app = express();
-const PORT = 3000;
+const PORT = 3001; // Changed to avoid React dev server port conflict (assuming React runs on 3000)
 
-app.use(cors());
+app.use(cors()); // Enable all origins for CORS
 app.use(express.json());
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views'));
+
+// Serve the admin panel on the root URL
+app.get('/', (req, res) => {
+  db.all('SELECT * FROM users', (err, rows) => {
+    if (err) return res.status(500).json({ error: err.message });
+    res.render('admin', { users: rows });
+  });
+});
 
 // CREATE
 app.post('/api/users', (req, res) => {
@@ -22,7 +33,7 @@ app.post('/api/users', (req, res) => {
 app.get('/api/users', (req, res) => {
   db.all('SELECT * FROM users', (err, rows) => {
     if (err) return res.status(500).json({ error: err.message });
-    res.json(rows);
+    res.json(rows); // Return users data
   });
 });
 
@@ -46,7 +57,7 @@ app.delete('/api/users/:id', (req, res) => {
   });
 });
 
-// START SERVER
+// Start the server
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
 });

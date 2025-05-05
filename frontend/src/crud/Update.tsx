@@ -8,7 +8,7 @@ export default function Update() {
 
   const handleUpdate = async (e) => {
     e.preventDefault();
-    await axios.put(`http://localhost:3000/api/users/${id}`, { name, email });
+    await axios.put(`http://localhost:3001/api/users/${id}`, { name, email });
     alert('User updated!');
   };
 

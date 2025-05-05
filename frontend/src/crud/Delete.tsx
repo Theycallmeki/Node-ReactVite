@@ -6,7 +6,7 @@ export default function Delete() {
 
   const handleDelete = async (e) => {
     e.preventDefault();
-    await axios.delete(`http://localhost:3000/api/users/${id}`);
+    await axios.delete(`http://localhost:3001/api/users/${id}`);
     alert('User deleted!');
   };
 

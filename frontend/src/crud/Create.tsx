@@ -7,7 +7,7 @@ export default function Create() {
 
   const handleCreate = async (e) => {
     e.preventDefault();
-    await axios.post('http://localhost:3000/api/users', { name, email });
+    await axios.post('http://localhost:3001/api/users', { name, email });
     setName('');
     setEmail('');
     alert('User created!');

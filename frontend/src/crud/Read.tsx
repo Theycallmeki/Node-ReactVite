@@ -5,7 +5,7 @@ export default function Read() {
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:3000/api/users').then((res) => setUsers(res.data));
+    axios.get('http://localhost:3001/api/users').then((res) => setUsers(res.data));
   }, []);
 
   return (
