@@ -10,7 +10,7 @@ const Home = () => {
     <div>
       <h1>Welcome to the Homepage!</h1>
       <p>This is the home page of your app.</p>
-      <button onClick={handleGetStarted}>Get Started</button>
+      <button onClick={handleGetStarted}>Get Started ayaw magupdate ng readme github brah</button>
     </div>
   );
 };
