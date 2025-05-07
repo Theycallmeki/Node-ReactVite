@@ -10,7 +10,7 @@ export default function Read() {
 
   return (
     <div>
-      <h2>User List</h2>
+      <h2>User List shows id </h2>
       <ul>
         {users.map((u) => (
           <li key={u.id}>

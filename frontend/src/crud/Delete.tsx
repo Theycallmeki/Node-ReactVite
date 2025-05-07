@@ -12,7 +12,7 @@ export default function Delete() {
 
   return (
     <form onSubmit={handleDelete}>
-      <h2>Delete User</h2>
+      <h2>Delete User via id</h2>
       <input placeholder="User ID" value={id} onChange={(e) => setId(e.target.value)} required />
       <button type="submit">Delete</button>
     </form>
