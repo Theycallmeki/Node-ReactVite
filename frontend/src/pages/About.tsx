@@ -4,7 +4,7 @@ const About = () => {
   return (
     <div>
       <h1>Acrud project</h1>
-      <p>This is the about page. Here you can include information about your project or company.</p>
+      <p>Testing</p>
     </div>
   );
 };
